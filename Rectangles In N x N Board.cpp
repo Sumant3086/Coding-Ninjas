@@ -55,11 +55,22 @@
 
 
 
+// int countRectangles(int n)
+// {
+// 	// Write your code here
+// 	long long totalRec=(long long)(n*(n+1)/2); //for hor and ver
+// 	totalRec*=totalRec;
+// 	long long totalSq=(long long)(n*(n+1)*(2*n+1)/6);//sum of 1 to n^2
+// 	return totalRec-totalSq;
+// }   
+
+const int MOD=1e9+7;
 int countRectangles(int n)
 {
 	// Write your code here
-	long long totalRec=(long long)(n*(n+1)/2); //for hor and ver
-	totalRec*=totalRec;
-	long long totalSq=(long long)(n*(n+1)*(2*n+1)/6);//sum of 1 to n^2
-	return totalRec-totalSq;
+	long long total=1LL*n*(n+1)%MOD;  
+	total=total*total%MOD*250000002%MOD;
+	long long sq=1LL*n*(n+1)%MOD*(2*n+1)%MOD;
+	sq=sq*166666668%MOD;  
+	return (total-sq+MOD)%MOD;
 }
