@@ -37,7 +37,7 @@ long getMaximumProfit(long *values, int n)
     //Write your code here
     long profit=0;
     for(int i=1;i<n;i++){
-        int diff=values[i]-values[i-1];
+        long diff=values[i]-values[i-1];
         if(diff>0){
             profit+=diff;
         }
