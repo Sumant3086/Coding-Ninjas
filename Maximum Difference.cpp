@@ -46,11 +46,25 @@
 // EVEN 
 
 
+// #include <bits/stdc++.h> 
+// string maximumDifference(int n, vector<int>& arr)
+// {
+// 	// Write your code here.
+// 	sort(arr.begin(),arr.end());
+// 	int diff=arr[n-1]-arr[0];
+// 	return (diff%2==0)?"EVEN":"ODD";
+// }
+
 #include <bits/stdc++.h> 
 string maximumDifference(int n, vector<int>& arr)
 {
 	// Write your code here.
-	sort(arr.begin(),arr.end());
-	int diff=arr[n-1]-arr[0];
+	int minVal=INT_MAX;
+	int maxVal=INT_MIN;
+	for(int i:arr){
+		minVal=min(minVal,i);
+		maxVal=max(maxVal,i);
+	}
+	int diff=maxVal-minVal;
 	return (diff%2==0)?"EVEN":"ODD";
 }
